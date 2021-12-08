@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
   const skyNextTitMotion = document.querySelector('.sky .text-wrap .tit-motion');
   const skyNextDescMotion = document.querySelector('.sky .text-wrap .desc-motion');
   const skyImgIntro = document.querySelector('.sky .img-intro');
+  const skyBox = document.querySelector('.sky .box');
 
   const balckDesc = document.querySelectorAll('.balck-title .desc-style .desc-motion');
   const balckTit = document.querySelectorAll('.balck-title .tit-style .tit-motion');
@@ -22,13 +23,16 @@ window.addEventListener('load', () => {
   const blueBgTit = document.querySelectorAll('.blue-bg .tit-style .tit-motion');
 
   const blueImg = document.querySelector('.blue .img-intro');
+  const blueBox = document.querySelector('.blue .box');
   const blueDesc = document.querySelector('.blue .desc-style .desc-motion');
   const blueTit = document.querySelectorAll('.blue .tit-style .tit-motion');
 
+  const brownIntroImg = document.querySelector('.brown-intro .img-intro');
   const brownIntroDesc = document.querySelector('.brown-intro .desc-style .desc-motion');
   const brownIntroTit = document.querySelectorAll('.brown-intro .tit-style .tit-motion');
   
   const brownIntroNextImg = document.querySelector('.brown-intro-next .img-intro');
+  const brownIntroNextBox = document.querySelector('.brown-intro-next .box');
   const brownIntroNextDesc = document.querySelector('.brown-intro-next .desc-style .desc-motion');
   const brownIntroNextTit = document.querySelectorAll('.brown-intro-next .tit-style .tit-motion');
 
@@ -47,88 +51,100 @@ window.addEventListener('load', () => {
 
   scrollWork();
   function scrollWork() {
-    console.log(html.scrollTop);
-    if (html.scrollTop > 760) {
+    // console.log(html.scrollTop);
+    if (html.scrollTop > 369) {
       redNextImgIntro.classList.add('on');
       redNextTitMotion.classList.add('on');
       redNextDescMotion.classList.add('on');
     }
-    if (html.scrollTop > 2167) {
+    if (html.scrollTop > 1482) {
       skyImgIntro.classList.add('on');
     }
-    if (html.scrollTop > 2167) {
+    if (html.scrollTop > 1482) {
+      skyBox.classList.add('on');
+    }
+    if (html.scrollTop > 1482) {
       skyNextTitMotion.classList.add('on');
       skyNextDescMotion.classList.add('on');
     }
-    if (html.scrollTop > 2667) {
+    if (html.scrollTop > 2567) {
       for (let i = 0; i < balckDesc.length; i++) {
         balckDesc[i].classList.add('on');
       }
     }
-    if (html.scrollTop > 3168) {
+    if (html.scrollTop > 3068) {
       for (let i = 0; i < balckTit.length; i++) {
         balckTit[i].classList.add('on');
       }
     }
-    if (html.scrollTop > 4397) {
+    if (html.scrollTop > 4297) {
       blueBg.classList.add('on');
     }
-    if (html.scrollTop > 4397) {
+    if (html.scrollTop > 4297) {
       blueBgDesc.classList.add('on');
     }
-    if (html.scrollTop > 4397) {
+    if (html.scrollTop > 4297) {
       for (let i = 0; i < blueBgTit.length; i++) {
         blueBgTit[i].classList.add('on');
       }
     }
-    if (html.scrollTop > 4538) {
+    if (html.scrollTop > 4380) {
       blueBgBox.classList.add('on');
     }
-    if (html.scrollTop > 5412) {
+    if (html.scrollTop > 5312) {
       blueImg.classList.add('on');
     }
-    if (html.scrollTop > 6178) {
+    if (html.scrollTop > 5692) {
+      blueBox.classList.add('on');
+    }
+    if (html.scrollTop > 5622) {
       blueDesc.classList.add('on');
     }
-    if (html.scrollTop > 6406) {
+    if (html.scrollTop > 5622) {
       for (let i = 0; i < blueTit.length; i++) {
         blueTit[i].classList.add('on');
       }
     }
-    if (html.scrollTop > 7439) {
+    if (html.scrollTop > 6069) {
+      brownIntroImg.classList.add('on');
+    }
+    if (html.scrollTop > 6985) {
       brownIntroDesc.classList.add('on');
     }
-    if (html.scrollTop > 7439) {
+    if (html.scrollTop > 6985) {
       for (let i = 0; i < brownIntroTit.length; i++) {
         brownIntroTit[i].classList.add('on');
       }
     }
-    if (html.scrollTop > 8060) {
+    if (html.scrollTop > 7485) {
+      brownIntroNextBox.classList.add('on');
+    }
+    if (html.scrollTop > 7960) {
       brownIntroNextImg.classList.add('on');
     }
-    if (html.scrollTop > 8060) {
+    if (html.scrollTop > 7960) {
       brownIntroNextDesc.classList.add('on');
     }
-    if (html.scrollTop > 8060) {
+    if (html.scrollTop > 7960) {
       for (let i = 0; i < brownIntroNextTit.length; i++) {
         brownIntroNextTit[i].classList.add('on');
       }
     }
-    if (html.scrollTop > 8760) {
+    if (html.scrollTop > 8660) {
       brownLastImgIntro.classList.add('on');
     }
-    if (html.scrollTop > 8760) {
+    if (html.scrollTop > 8660) {
       brownLastDesc.classList.add('on');
     }
-    if (html.scrollTop > 8760) {
+    if (html.scrollTop > 8660) {
       for (let i = 0; i < brownLastTit.length; i++) {
         brownLastTit[i].classList.add('on');
       }
     }
-    if (html.scrollTop > 9920) {
+    if (html.scrollTop > 9820) {
       contentsLastImgIntro.classList.add('on');
     }
-    if (html.scrollTop > 9920) {
+    if (html.scrollTop > 9820) {
       contentsLastBox.classList.add('on');
     }
     
@@ -142,7 +158,7 @@ window.addEventListener('load', () => {
       let current = html.scrollTop / (html.offsetHeight - html.clientHeight);
       // let line = html.offsetWidth * current;
       let line = 100 * current;
-      console.log(line);
+      // console.log(line);
       if (isNaN(line)) {
         line = 0;
       }
@@ -154,7 +170,7 @@ window.addEventListener('load', () => {
     } else {
       count.classList.remove('on');
     }
-    if (html.scrollTop > 3172 && html.scrollTop < 7220) {
+    if (html.scrollTop > 3136 && html.scrollTop < 7184) { // 3136px ~ 7184px
       count.classList.add('change');
     }
 
@@ -178,6 +194,5 @@ window.addEventListener('load', () => {
     //   bar.style.width = percentage + '%';
     //   per.innerText = Math.floor(percentage) + '%';
     // });
-
   };
 });

@@ -61,7 +61,7 @@ body::-webkit-scrollbar-track {
 .main .count {
   position: fixed;
   top: 20px;
-  left: 20px;
+  right: 20px;
   z-index: 200;
   /* width: 0px; */
   /* height: 10px; */
