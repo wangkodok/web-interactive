@@ -31,7 +31,7 @@ body::-webkit-scrollbar-track {
   background-color: transparent;
 }
 
-.loading-spinner {
+/* .loading-spinner {
   position: fixed;
   top: 0; left: 0;
   width: 100%;
@@ -40,7 +40,7 @@ body::-webkit-scrollbar-track {
   z-index: 9999;
   opacity: 1;
   transition: 0.5s ease;
-}
+} */
 
 /* .loading-spinner > div {
   position: absolute;
@@ -50,13 +50,13 @@ body::-webkit-scrollbar-track {
   font-size: 24px;
 } */
 
-.loading-spinner .loader {
+/* .loading-spinner .loader {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: initial;
-}
+} */
 
 .main .count {
   position: fixed;
@@ -80,7 +80,9 @@ body::-webkit-scrollbar-track {
   color: #fff;
 }
 
-.main .count.line {left: 0px;}
+.main .count.line {
+  left: 0px;
+}
 
 .wrap {
   overflow: hidden;
