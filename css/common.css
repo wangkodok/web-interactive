@@ -62,14 +62,9 @@ body::-webkit-scrollbar-track {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 200;
-  /* width: 0px; */
-  /* height: 10px; */
-  /* line-height: 65px; */
-  /* font-size: 32px; */
+  z-index: 1;
   color: #000;
   opacity: 0;
-  /* background-color: #000; */
 }
 
 .main .count.on {
@@ -100,7 +95,7 @@ body::-webkit-scrollbar-track {
 }
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -117,6 +112,10 @@ body::-webkit-scrollbar-track {
 .header .logo {
   font-size: 16px;
   font-family: var(--font-Roboto);
+}
+
+.header .logo a.on {
+  color: #fff;
 }
 
 .header .gnb-util {
@@ -145,6 +144,7 @@ body::-webkit-scrollbar-track {
   width: 40px;
   height: 40px;
   font-size: 0;
+  z-index: 1000;
 }
 
 .hb-menu .line-wrap {
@@ -161,10 +161,200 @@ body::-webkit-scrollbar-track {
   height: 2px;
   margin: 0 0 5px 0;
   background-color: #000;
+  transform: rotate(0);
+  transition: all 0.5s ease;
+}
+
+.hb-menu.activation .btn-box {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+
+.hb-menu.activation .line-wrap .line {
+  background-color: #fff;
+}
+
+.hb-menu.activation .line-wrap .line.first {
+  transform: rotate(45deg);
+  margin: 0 0 -2px 0;
+}
+
+.hb-menu.activation .line-wrap .line.center {
+  display: none;
+}
+
+.hb-menu.activation .line-wrap .line.last {
+  transform: rotate(-45deg);
+}
+
+.hb-menu .line-wrap .line.on {
+  background-color: #fff;
 }
 
 .hb-menu .line-wrap .line:last-child {
   margin: 0;
+}
+
+.hb-menu-open {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.hb-menu-open.activation {
+  border: 1px solid #fff;
+}
+
+.hb-menu-open .img-photo {
+  position: absolute;
+  top: -100%;
+  right: 0;
+  z-index: -1;
+}
+
+.hb-menu-open .img-photo.on {
+  animation-name: img-photo;
+  animation-delay: 1.3s;
+  animation-duration: 1.6s;
+  animation-fill-mode: both;
+}
+
+@keyframes img-photo {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+.hb-menu-open.on {
+  top: 0;
+  opacity: 1;
+}
+
+.hb-menu-open .menu-box {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.hb-menu-open .menu-wrap {
+  position: absolute;
+  top: 120px;
+  left: 100px;
+}
+
+.hb-menu-open .menu-list {}
+
+.hb-menu-open .menu-list > li {}
+
+.hb-menu-open .menu-list > li > a {
+  position: relative;
+  color: rgba(255, 255, 255, 1);
+  font-size: 64px;
+  font-family: var(--font-Yeseva_One);
+  font-weight: 400;
+  text-transform: capitalize;
+  transition: all 0.5s ease;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: transparent;
+}
+
+.hb-menu-open .menu-list > li > a::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+  transition: all 0.5s ease;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 0;
+}
+
+.hb-menu-open .menu-list > li > a:hover {
+  padding: 0 0 0 28px;
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgba(255, 255, 255, 1);
+}
+
+.hb-menu-open .menu-list > li > a:hover::after {
+  opacity: 1;
+  border: 1px solid rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.hb-menu-open.on .menu-list > li:nth-child(1) > a {
+  animation-name: motion;
+  animation-delay: 0.5s;
+  animation-duration: 1.0s;
+  animation-fill-mode: both;
+}
+
+.hb-menu-open.on .menu-list > li:nth-child(2) > a {
+  animation-name: motion;
+  animation-delay: 0.7s;
+  animation-duration: 1.2s;
+  animation-fill-mode: both;
+}
+
+.hb-menu-open.on .menu-list > li:nth-child(3) > a {
+  animation-name: motion;
+  animation-delay: 0.9s;
+  animation-duration: 1.4s;
+  animation-fill-mode: both;
+}
+
+@keyframes motion {
+  from {
+    opacity: 0;
+    transform: translate(0, 100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+.hb-menu-open .contact-wrap {
+  position: absolute;
+  right: 100px;
+  bottom: 120px;
+}
+
+.hb-menu-open.on .address {
+  color: #ccc;
+  font-weight: 300;
+  font-family: var(--font-Roboto);
+  animation-name: address;
+  animation-delay: 1.5s;
+  animation-duration: 2.0s;
+  animation-fill-mode: both;
+}
+
+@keyframes address {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 .footer .inner {

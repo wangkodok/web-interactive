@@ -14,6 +14,7 @@ function red() {
 
 
 window.addEventListener('scroll', () => {
+  headerArea()
   redNext();
   sky();
   balckTitle();
@@ -178,6 +179,36 @@ function contentsLast() {
 };
 
 
+// 햄버거 메뉴 클릭하면 나오는 콘텐츠
+hb();
+function hb() {
+  const hbMenu = document.querySelector('.hb-menu');
+  const hbMenuOpen = document.querySelector('.hb-menu-open');
+  const hbMenuImg = document.querySelector('.hb-menu-open .img-photo');
+  const hbMenuAddress = document.querySelector('.hb-menu-open .address');
+  
+  hbMenu.addEventListener('click', () => {
+    hbMenuBtn();
+  });
+  
+  function hbMenuBtn() {
+  
+    if (hbMenu.className === 'hb-menu') {
+      hbMenu.classList.add('activation')
+      hbMenuOpen.classList.add('on');
+      hbMenuImg.classList.add('on');
+      hbMenuAddress.classList.add('on');
+    } else {
+      hbMenu.classList.remove('activation');
+      hbMenuOpen.classList.remove('on');
+      hbMenuImg.classList.remove('on');
+      hbMenuAddress.classList.remove('on');
+    }
+
+  };
+}
+
+
 // 스크롤하면 숫자 카운터 올라가는 코드
 function scrolCount() {
   const count = document.querySelector('.count');
@@ -200,5 +231,26 @@ function scrolCount() {
 
   if (html.scrollTop > 3136 && html.scrollTop < 7184) { // 3136px ~ 7184px
     count.classList.add('change');
+  }
+};
+
+
+// 스크롤하면 헤더가 고정하고 3136px ~ 7184px에서 색상이 변하는 코드
+function headerArea() {
+  const logo = document.querySelector('.header .logo a');
+  const hbMenuLine = document.querySelectorAll('.hb-menu .line-wrap .line');
+
+  if (html.scrollTop >= 1) {
+    logo.classList.remove('on');
+    for (let i = 0; i < hbMenuLine.length; i++) {
+      hbMenuLine[i].classList.remove('on');
+    }
+  }
+
+  if (html.scrollTop > 3136 && html.scrollTop < 7184) { // 3136px ~ 7184px
+    logo.classList.add('on');
+    for (let i = 0; i < hbMenuLine.length; i++) {
+      hbMenuLine[i].classList.add('on');
+    }
   }
 };
