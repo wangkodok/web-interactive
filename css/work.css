@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+.work {
+
+}
+
+.work .contents {
+  padding: 240px 0 0 0;
+}
+
+.work .contents .text-box {
+  position: relative;
+}
+
+.work .contents .line {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  width: 426px;
+  height: 16px;
+  background-color: #000;
+}
+
+.work .contents .text-box {
+  margin: 0 0 212px 0;
+}
+
+.work-contents {}
+.work-contents .list {}
+.work-contents .list > li {
+  margin: 0 0 80px 0;
+}

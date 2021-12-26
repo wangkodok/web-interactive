@@ -357,6 +357,12 @@ body::-webkit-scrollbar-track {
   }
 }
 
+.container .title {
+  font-size: 120px;
+  font-weight: 400;
+  font-family: var(--font-Yeseva_One);
+}
+
 .footer .inner {
   display: flex;
   align-items: center;
